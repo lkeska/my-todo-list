@@ -1,13 +1,13 @@
 <div class="container">
   <nav class="row">
     <div class="nav-wrapper">
-      <span class="brand-logo center">{{ title | titlecase}}</span>
+      <span class="brand-logo center">{{ config.title | titlecase}}</span>
     </div>
   </nav>
   <div class="row">
-      <div class="row">Lokalizacja: {{getDate() | date:'fullDate' | uppercase}}</div>
-      <div class="row">Lokalizacja (PL): {{getDate() | date:'fullDate':'':'pl'}}</div>
-      <div class="row">Lokalizacja (BN): {{getDate() | date:'fullDate':'':'bn'}}</div>
+      <div class="row">Lokalizacja: {{config.date | date:'fullDate' | uppercase}}</div>
+      <div class="row">Lokalizacja (PL): {{config.date | date:'fullDate':'':'pl'}}</div>
+      <div class="row">Lokalizacja (BN): {{config.date | date:'fullDate':'':'bn'}}</div>
   </div>
 
   <div class="row">
@@ -49,7 +49,7 @@
   <footer class="page-footer mt-5">
     <div class="footer-copyright">
       <div class="container">
-        {{getDate()|date:'yyyy'}} {{ footer }}
+        {{config.date|date:'yyyy'}} {{ config.footer }}
       </div>
     </div>
   </footer>

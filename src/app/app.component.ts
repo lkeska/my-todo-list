@@ -7,7 +7,17 @@ import { Component, Inject, LOCALE_ID } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Moja lista zadań';
+
+  config: {[key:string]:string|Date} = null;
+
+  constructor(){
+    this.config = {
+      title:"Lista zadań",
+      footer:'© Lista zadań, All rights reserved.',
+      date:new Date()
+    };
+  }
+  /*title = 'Moja lista zadań';
 
   get footer():string{
     return '© Lista zadań,All rights reserved.';
@@ -19,5 +29,5 @@ export class AppComponent {
 
   constructor(@Inject(LOCALE_ID) private localeId:string){
     console.log(localeId);
-  }
+  }*/
 }
