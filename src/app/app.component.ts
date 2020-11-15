@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject, LOCALE_ID } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'my-todo-list';
+  title = 'Moja lista zadań';
+
+  get footer():string{
+    return '© Lista zadań,All rights reserved.';
+  }
+
+  getDate():Date{
+    return new Date();
+  }
+
+  constructor(@Inject(LOCALE_ID) private localeId:string){
+    console.log(localeId);
+  }
 }
